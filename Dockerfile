@@ -1,4 +1,4 @@
-FROM nubs/composer-build
+FROM nubs/composer-build:latest
 
 MAINTAINER Spencer Rinehart <anubis@overthemonkey.com>
 
