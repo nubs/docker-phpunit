@@ -66,6 +66,10 @@ docker run -i -t --rm -v "$(pwd):/code" my-code
 docker run -i -t --rm -v "$(pwd):/code" my-code phpunit --coverage-html
 ```
 
+## License
+docker-phpunit is licensed under the MIT license.  See [LICENSE](LICENSE) for
+the full license text.
+
 [PHPUnit]: http://phpunit.de/
 [composer-build]: https://github.com/nubs/docker-composer-build
 [xdebug]: http://www.xdebug.org/
