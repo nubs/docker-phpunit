@@ -5,7 +5,8 @@ MAINTAINER Spencer Rinehart <anubis@overthemonkey.com>
 USER root
 
 # Setup phpunit dependencies (including optional)
-RUN pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar --quiet && pacman --sync --noconfirm --noprogressbar --quiet xdebug
+RUN pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar --quiet && \
+    pacman --sync --noconfirm --noprogressbar --quiet xdebug
 ADD phpunit-dependencies.ini /etc/php/conf.d/phpunit-dependencies.ini
 
 USER build
