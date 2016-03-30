@@ -3,9 +3,8 @@ FROM nubs/composer-build:latest
 MAINTAINER Spencer Rinehart <anubis@overthemonkey.com>
 
 # Setup phpunit dependencies (including optional)
-RUN pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar --quiet && \
-    pacman --sync --noconfirm --noprogressbar --quiet xdebug
-COPY phpunit-dependencies.ini /etc/php/conf.d/
+RUN apk add --no-cache xdebug && \
+    docker-php-ext-enable xdebug
 
 # Install the most recent stable phpunit.  This is more or less a fallback for
 # the default use case.  It is expected that a project would specify its own

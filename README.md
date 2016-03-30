@@ -49,11 +49,7 @@ process alone could look like this:
 ```dockerfile
 FROM nubs/phpunit
 
-USER root
-
-RUN pacman --sync --noconfirm --noprogressbar --quiet php-mongo
-
-USER build
+RUN docker-php-ext-install iconv
 ```
 
 You can then build this docker image and run it against your codebase like
