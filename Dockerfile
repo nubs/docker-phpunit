@@ -3,7 +3,7 @@ FROM nubs/composer-build:latest
 MAINTAINER Spencer Rinehart <anubis@overthemonkey.com>
 
 # Setup phpunit dependencies (including optional)
-RUN apk add --no-cache xdebug && \
+RUN pecl install xdebug && \
     docker-php-ext-enable xdebug
 
 # Install the most recent stable phpunit.  This is more or less a fallback for
