@@ -4,7 +4,8 @@ MAINTAINER Spencer Rinehart <anubis@overthemonkey.com>
 
 # Setup phpunit dependencies (including optional)
 RUN pecl install xdebug && \
-    docker-php-ext-enable xdebug
+    docker-php-ext-enable xdebug && \
+    docker-php-ext-install mbstring
 
 # Install the most recent stable phpunit.  This is more or less a fallback for
 # the default use case.  It is expected that a project would specify its own
